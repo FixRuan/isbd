@@ -103,13 +103,13 @@ WHERE idCliente = ANY (
 );
 
 -- F11: consulta com ALL
--- Lista os veiculos com maior quilometragem do que a marca Uno.
-SELECT v.modelo, v.placa, v.quilometragem_atual
+-- Lista os veiculos com maior quilometragem do que a marca Fiat.
+SELECT v.modelo, v.marca, v.placa, v.quilometragem_atual
 FROM Veiculo v
 WHERE v.quilometragem_atual > ALL (
     SELECT quilometragem_atual
     FROM Veiculo
-    WHERE marca = 'Uno'
+    WHERE marca = 'Fiat'
 );
 
 -- F12: consulta com EXISTS
