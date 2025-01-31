@@ -54,7 +54,7 @@ CREATE TABLE Fornecedor (
 
 -- Criação da tabela Veiculo
 CREATE TABLE Veiculo (
-    placa CHAR(8) NOT NULL PRIMARY KEY UNIQUE,
+    placa CHAR(8) NOT NULL PRIMARY KEY,
     marca VARCHAR(15) NOT NULL,
     modelo VARCHAR(15) NOT NULL,
     ano INT NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE Veiculo (
 
 -- Criação da tabela Carro
 CREATE TABLE Carro(
-    Veiculo_placa CHAR(8) NOT NULL UNIQUE PRIMARY KEY,
+    Veiculo_placa CHAR(8) NOT NULL PRIMARY KEY,
     numero_portas INT NOT NULL,
     tipo_combustivel VARCHAR(15),
     FOREIGN KEY (Veiculo_placa) REFERENCES Veiculo(placa)
