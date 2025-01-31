@@ -2,6 +2,11 @@ CREATE DATABASE locacao;
 
 USE locacao;
 
+/* (a) Criação de todas as tabelas e de todas as restrições de integridade. Todas as
+restrições de chave (PRIMARY KEY) e de integridade referencial (FOREIGN KEY)
+devem ser criadas. Além disso, crie pelo menos um exemplo com cada uma das
+restrições UNIQUE e DEFAULT */
+
 -- Criação da tabela Cliente
 CREATE TABLE Cliente (
     idCliente INT AUTO_INCREMENT PRIMARY KEY,
@@ -41,7 +46,7 @@ CREATE TABLE Veiculo (
 
 -- Criação da tabela Carro
 CREATE TABLE Carro(
-    Veiculo_placa CHAR(8) NOT NULL UNIQUE,
+    Veiculo_placa CHAR(8) NOT NULL UNIQUE SECONDARY KEY,
     numero_portas INT NOT NULL,
     tipo_combustivel VARCHAR(15),
     FOREIGN KEY (Veiculo_placa) REFERENCES Veiculo(placa)
@@ -50,7 +55,7 @@ CREATE TABLE Carro(
 
 -- Criação da tabela Moto
 CREATE TABLE Moto(
-    Veiculo_placa CHAR(8) NOT NULL,
+    Veiculo_placa CHAR(8) NOT NULL SECONDARY KEY,
     cilindradas INT NOT NULL,
     FOREIGN KEY (Veiculo_placa) REFERENCES Veiculo(placa)
         ON DELETE CASCADE
@@ -58,7 +63,7 @@ CREATE TABLE Moto(
 
 -- Criação da tabela Caminhão
 CREATE TABLE Caminhao(
-    Veiculo_placa CHAR(8) NOT NULL,
+    Veiculo_placa CHAR(8) NOT NULL SECONDARY KEY,
     eixos INT NOT NULL,
     FOREIGN KEY (Veiculo_placa) REFERENCES Veiculo(placa)
         ON DELETE CASCADE
@@ -101,7 +106,7 @@ CREATE TABLE Funcionario (
 
 -- Criação da tabela Funcionario_Horista
 CREATE TABLE Funcionario_Horista (
-    Funcionario_cpf CHAR(11) NOT NULL,
+    Funcionario_cpf CHAR(11) NOT NULL SECONDARY KEY,
     valor_hora DECIMAL(6,2) NOT NULL,
     FOREIGN KEY (Funcionario_cpf) REFERENCES Funcionario(cpf)
         ON DELETE CASCADE
@@ -109,7 +114,7 @@ CREATE TABLE Funcionario_Horista (
 
 -- Criação da tabela Funcionario_Mensal
 CREATE TABLE Funcionario_Mensal (
-    Funcionario_cpf CHAR(11) NOT NULL,
+    Funcionario_cpf CHAR(11) NOT NULL SECONDARY KEY,
     salario DECIMAL(6,2) NOT NULL,
     FOREIGN KEY (Funcionario_cpf) REFERENCES Funcionario(cpf)
         ON DELETE CASCADE
