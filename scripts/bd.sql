@@ -23,6 +23,28 @@ CREATE TABLE Cliente (
     bairro VARCHAR(30) NOT NULL
 );
 
+-- Criação da tabela Funcionario
+CREATE TABLE Funcionario (
+    cpf CHAR(11) NOT NULL PRIMARY KEY,
+    nome VARCHAR(45) NOT NULL
+);
+
+-- Criação da tabela Funcionario_Horista
+CREATE TABLE Funcionario_Horista (
+    Funcionario_cpf CHAR(11) NOT NULL PRIMARY KEY,
+    valor_hora DECIMAL(6,2) NOT NULL,
+    FOREIGN KEY (Funcionario_cpf) REFERENCES Funcionario(cpf)
+        ON DELETE CASCADE
+);
+
+-- Criação da tabela Funcionario_Mensal
+CREATE TABLE Funcionario_Mensal (
+    Funcionario_cpf CHAR(11) NOT NULL PRIMARY KEY,
+    salario DECIMAL(6,2) NOT NULL,
+    FOREIGN KEY (Funcionario_cpf) REFERENCES Funcionario(cpf)
+        ON DELETE CASCADE
+);
+
 -- Criação da tabela Fornecedor
 CREATE TABLE Fornecedor (
     cnpj CHAR(14) NOT NULL PRIMARY KEY UNIQUE,
@@ -46,7 +68,7 @@ CREATE TABLE Veiculo (
 
 -- Criação da tabela Carro
 CREATE TABLE Carro(
-    Veiculo_placa CHAR(8) NOT NULL UNIQUE SECONDARY KEY,
+    Veiculo_placa CHAR(8) NOT NULL UNIQUE PRIMARY KEY,
     numero_portas INT NOT NULL,
     tipo_combustivel VARCHAR(15),
     FOREIGN KEY (Veiculo_placa) REFERENCES Veiculo(placa)
@@ -55,7 +77,7 @@ CREATE TABLE Carro(
 
 -- Criação da tabela Moto
 CREATE TABLE Moto(
-    Veiculo_placa CHAR(8) NOT NULL SECONDARY KEY,
+    Veiculo_placa CHAR(8) NOT NULL PRIMARY KEY,
     cilindradas INT NOT NULL,
     FOREIGN KEY (Veiculo_placa) REFERENCES Veiculo(placa)
         ON DELETE CASCADE
@@ -63,7 +85,7 @@ CREATE TABLE Moto(
 
 -- Criação da tabela Caminhão
 CREATE TABLE Caminhao(
-    Veiculo_placa CHAR(8) NOT NULL SECONDARY KEY,
+    Veiculo_placa CHAR(8) NOT NULL PRIMARY KEY,
     eixos INT NOT NULL,
     FOREIGN KEY (Veiculo_placa) REFERENCES Veiculo(placa)
         ON DELETE CASCADE
@@ -98,27 +120,6 @@ CREATE TABLE Pagamento (
         ON DELETE CASCADE
 );
 
--- Criação da tabela Funcionario
-CREATE TABLE Funcionario (
-    cpf CHAR(11) NOT NULL PRIMARY KEY,
-    nome VARCHAR(45) NOT NULL
-);
-
--- Criação da tabela Funcionario_Horista
-CREATE TABLE Funcionario_Horista (
-    Funcionario_cpf CHAR(11) NOT NULL SECONDARY KEY,
-    valor_hora DECIMAL(6,2) NOT NULL,
-    FOREIGN KEY (Funcionario_cpf) REFERENCES Funcionario(cpf)
-        ON DELETE CASCADE
-);
-
--- Criação da tabela Funcionario_Mensal
-CREATE TABLE Funcionario_Mensal (
-    Funcionario_cpf CHAR(11) NOT NULL SECONDARY KEY,
-    salario DECIMAL(6,2) NOT NULL,
-    FOREIGN KEY (Funcionario_cpf) REFERENCES Funcionario(cpf)
-        ON DELETE CASCADE
-);
 
 -- Criação da tabela Manutencao
 CREATE TABLE Manutencao (
