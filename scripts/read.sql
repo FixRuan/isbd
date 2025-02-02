@@ -119,3 +119,24 @@ SELECT nome FROM Cliente c
 WHERE EXISTS (
     SELECT 1 FROM Locacao l WHERE l.idCliente = c.idCliente
 );
+
+
+-- Lista os clientes que moram no estado de "SP" e na cidade de "São Paulo".
+SELECT nome, cidade, estado 
+FROM Cliente 
+WHERE estado = 'SP' AND cidade = 'São Paulo';
+
+-- Lista os veículos que são da marca "Fiat" ou "Honda".
+SELECT placa, marca, modelo 
+FROM Veiculo 
+WHERE marca = 'Fiat' OR marca = 'Honda';
+
+-- Lista os veículos que não estão disponíveis para locação.
+SELECT placa, modelo, disponibilidade 
+FROM Veiculo 
+WHERE NOT disponibilidade;
+
+-- Lista as locações feitas entre '2025-01-01' e '2025-03-31'.
+SELECT idLocacao, data_aluguel, data_termino 
+FROM Locacao 
+WHERE data_aluguel BETWEEN '2025-01-01' AND '2025-03-31';
