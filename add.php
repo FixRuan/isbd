@@ -36,17 +36,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <h2>Adicionar Cliente</h2>
     <form method="post">
-        Nome: <input type="text" name="nome" required><br>
-        CPF: <input type="text" name="cpf" required><br>
-        CNH: <input type="text" name="cnh" required><br>
-        Fone: <input type="text" name="fone" required><br>
-        Estado: <input type="text" name="estado" required><br>
-        Logradouro: <input type="text" name="logradouro" required><br>
-        CEP: <input type="text" name="cep"><br>
+        Nome: <input type="text" name="nome" required maxlength="50"><br>
+        CPF: <input type="text" name="cpf" required minlength="11" maxlength="11"><br>
+        CNH: <input type="text" name="cnh" required minlength="11" maxlength="11"><br>
+        Fone: <input type="text" name="fone" required minlength="11" maxlength="11"><br>
+        Estado: <input type="text" name="estado" required maxlength="30"><br>
+        Logradouro: <input type="text" name="logradouro" required maxlength="30"><br>
+        CEP: <input type="text" name="cep" minlength="8" maxlength="8"><br>
         Número: <input type="number" name="numero" required><br>
-        Bairro: <input type="text" name="bairro" required><br>
-        Complemento: <input type="text" name="complemento"><br>
-        Cidade: <input type="text" name="cidade" required><br>
+        Bairro: <input type="text" name="bairro" required maxlength="30"><br>
+        Complemento: <input type="text" name="complemento" maxlength="50"><br>
+        Cidade: <input type="text" name="cidade" required maxlength="30"><br>
         <input type="submit" value="Salvar">
     </form>
 </body>

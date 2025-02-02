@@ -38,15 +38,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <h2>Editar Cliente</h2>
     <form method="post">
-        Nome: <input type="text" name="nome" value="<?= $cliente['nome'] ?>" required><br>
-        Fone: <input type="text" name="fone" value="<?= $cliente['fone'] ?>" required><br>
-        Estado: <input type="text" name="estado" value="<?= $cliente['estado'] ?>" required><br>
-        Logradouro: <input type="text" name="logradouro" value="<?= $cliente['logradouro'] ?>" required><br>
-        CEP: <input type="text" name="cep" value="<?= $cliente['cep'] ?>"><br>
+        Nome: <input type="text" name="nome" value="<?= $cliente['nome'] ?>" required maxlength="50"><br>
+        Fone: <input type="text" name="fone" value="<?= $cliente['fone'] ?>" required minlength="11" maxlength="11"><br>
+        Estado: <input type="text" name="estado" value="<?= $cliente['estado'] ?>" required maxlength="30"><br>
+        Logradouro: <input type="text" name="logradouro" value="<?= $cliente['logradouro'] ?>" required
+            maxlength="30"><br>
+        CEP: <input type="text" name="cep" value="<?= $cliente['cep'] ?>" minlength="8" maxlength="8"><br>
         Número: <input type="number" name="numero" value="<?= $cliente['numero'] ?>" required><br>
-        Bairro: <input type="text" name="bairro" value="<?= $cliente['bairro'] ?>" required><br>
-        Complemento: <input type="text" name="complemento" value="<?= $cliente['complemento'] ?>"><br>
-        Cidade: <input type="text" name="cidade" value="<?= $cliente['cidade'] ?>" required><br>
+        Bairro: <input type="text" name="bairro" value="<?= $cliente['bairro'] ?>" required maxlength="30"><br>
+        Complemento: <input type="text" name="complemento" value="<?= $cliente['complemento'] ?>" maxlength="50"><br>
+        Cidade: <input type="text" name="cidade" value="<?= $cliente['cidade'] ?>" required maxlength="30"><br>
         <input type="submit" value="Atualizar">
     </form>
 </body>

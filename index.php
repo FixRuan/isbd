@@ -10,13 +10,18 @@ $result = $conn->query("SELECT * FROM Cliente");
 <head>
     <meta charset="UTF-8">
     <title>Lista de Clientes</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            padding: 5px;
+        }
+    </style>
 </head>
 
 <body>
     <h2>Clientes</h2>
     <a href="add.php">Adicionar Cliente</a>
-    <table border="1">
+    <table class="table" border="1">
         <tr>
             <th>ID</th>
             <th>Nome</th>
