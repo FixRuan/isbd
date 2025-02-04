@@ -1,11 +1,11 @@
-CREATE DATABASE locacao;
-
-USE locacao;
-
 /* (a) Criação de todas as tabelas e de todas as restrições de integridade. Todas as
 restrições de chave (PRIMARY KEY) e de integridade referencial (FOREIGN KEY)
 devem ser criadas. Além disso, crie pelo menos um exemplo com cada uma das
 restrições UNIQUE e DEFAULT */
+
+CREATE DATABASE locacao;
+
+USE locacao;
 
 -- Criação da tabela Cliente
 CREATE TABLE Cliente (
