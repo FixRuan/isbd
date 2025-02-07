@@ -33,22 +33,76 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Editar Cliente</title>
+    <style>
+        * {
+            padding: 2px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        input[type="submit"], [type="button"] {
+            background-color: #fff;
+            border: 1px solid #000;
+            padding: 5px;
+            margin-top: 10px;
+            width: 49%; 
+        }
+
+        input[type="submit"]:hover, [type="button"]:hover {
+            background-color: #000;
+            color: #fff;
+            cursor:pointer;
+        }
+
+    </style>
 </head>
 
 <body>
-    <h2>Editar Cliente</h2>
+    <h2 align="center">Editar Cliente</h2>
     <form method="post">
-        Nome: <input type="text" name="nome" value="<?= $cliente['nome'] ?>" required maxlength="50"><br>
-        Fone: <input type="text" name="fone" value="<?= $cliente['fone'] ?>" required minlength="11" maxlength="11"><br>
-        Estado: <input type="text" name="estado" value="<?= $cliente['estado'] ?>" required maxlength="30"><br>
-        Logradouro: <input type="text" name="logradouro" value="<?= $cliente['logradouro'] ?>" required
-            maxlength="30"><br>
-        CEP: <input type="text" name="cep" value="<?= $cliente['cep'] ?>" minlength="8" maxlength="8"><br>
-        Número: <input type="number" name="numero" value="<?= $cliente['numero'] ?>" required><br>
-        Bairro: <input type="text" name="bairro" value="<?= $cliente['bairro'] ?>" required maxlength="30"><br>
-        Complemento: <input type="text" name="complemento" value="<?= $cliente['complemento'] ?>" maxlength="50"><br>
-        Cidade: <input type="text" name="cidade" value="<?= $cliente['cidade'] ?>" required maxlength="30"><br>
-        <input type="submit" value="Atualizar">
+        <table border="0" align="center">
+            <tr>
+                <td>Nome:</td>
+                <td><input type="text" name="nome" value="<?= $cliente['nome'] ?>" required maxlength="50"></td>
+            </tr>
+            <tr>
+                <td>Fone:</td>
+                <td><input type="text" name="fone" value="<?= $cliente['fone'] ?>" required minlength="11" maxlength="11"></td>
+            </tr>
+            <tr>
+                <td>Estado:</td>
+                <td><input type="text" name="estado" value="<?= $cliente['estado'] ?>" required maxlength="2"></td>
+            </tr>
+            <tr>
+                <td>Logradouro:</td>
+                <td><input type="text" name="logradouro" value="<?= $cliente['logradouro'] ?>" required maxlength="50"></td>
+            </tr>
+            <tr>
+                <td>CEP:</td>
+                <td><input type="text" name="cep" value="<?= $cliente['cep'] ?>" required minlength="8" maxlength="8"></td>
+            </tr>
+            <tr>
+                <td>Número:</td>
+                <td><input type="text" name="numero" value="<?= $cliente['numero'] ?>" required maxlength="10"></td>
+            </tr>
+            <tr>
+                <td>Bairro:</td>
+                <td><input type="text" name="bairro" value="<?= $cliente['bairro'] ?>" required maxlength="50"></td>
+            </tr>
+            <tr>
+                <td>Complemento:</td>
+                <td><input type="text" name="complemento" value="<?= $cliente['complemento'] ?>" maxlength="50"></td>
+            </tr>
+            <tr>
+                <td>Cidade:</td>
+                <td><input type="text" name="cidade" value="<?= $cliente['cidade'] ?>" required maxlength="50"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Salvar">
+                    <input type="button" value="Cancelar" onclick="window.location.href='index.php'">
+                </td>
+            </tr>
+        </table>
     </form>
 </body>
 
