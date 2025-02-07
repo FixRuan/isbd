@@ -31,23 +31,84 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Adicionar Cliente</title>
+    <style>
+        * {
+            padding: 2px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        input[type="submit"], [type="button"] {
+            background-color: #fff;
+            padding: 6px;
+            margin-top: 10px;
+            border: 1px solid #000;
+            width: 49%;
+        }
+
+        input[type="submit"]:hover, [type="button"]:hover {
+            background-color: #000;
+            color: #fff;
+            cursor:pointer;
+        }
+
+    </style>
 </head>
 
 <body>
-    <h2>Adicionar Cliente</h2>
+    <h2 align="center">Adicionar Cliente</h2>
     <form method="post">
-        Nome: <input type="text" name="nome" required maxlength="50"><br>
-        CPF: <input type="text" name="cpf" required minlength="11" maxlength="11"><br>
-        CNH: <input type="text" name="cnh" required minlength="11" maxlength="11"><br>
-        Fone: <input type="text" name="fone" required minlength="11" maxlength="11"><br>
-        Estado: <input type="text" name="estado" required maxlength="30"><br>
-        Logradouro: <input type="text" name="logradouro" required maxlength="30"><br>
-        CEP: <input type="text" name="cep" minlength="8" maxlength="8"><br>
-        Número: <input type="number" name="numero" required><br>
-        Bairro: <input type="text" name="bairro" required maxlength="30"><br>
-        Complemento: <input type="text" name="complemento" maxlength="50"><br>
-        Cidade: <input type="text" name="cidade" required maxlength="30"><br>
-        <input type="submit" value="Salvar">
+        <table border="0" align="center">
+            <tr>
+                <td>CPF:</td>
+                <td><input type="text" name="cpf" required minlength="11" maxlength="11"></td>
+            </tr>
+            <tr>
+                <td>Nome:</td>
+                <td><input type="text" name="nome" required maxlength="50"></td>
+            </tr>
+            <tr>
+                <td>CNH:</td>
+                <td><input type="text" name="cnh" required minlength="11" maxlength="11"></td>
+            </tr>
+            <tr>
+                <td>Fone:</td>
+                <td><input type="text" name="fone" required minlength="11" maxlength="11"></td>
+            </tr>
+            <tr>
+                <td>Estado:</td>
+                <td><input type="text" name="estado" required maxlength="30"></td>
+            </tr>
+            <tr>
+                <td>Logradouro:</td>
+                <td><input type="text" name="logradouro" required maxlength="30"></td>
+            </tr>
+            <tr>
+                <td>CEP:</td>
+                <td><input type="text" name="cep" required minlength="8" maxlength="8"></td>
+            </tr>
+            <tr>
+                <td>Número:</td>
+                <td><input type="number" name="numero" required></td>
+            </tr>
+            <tr>
+                <td>Bairro:</td>
+                <td><input type="text" name="bairro" required maxlength="30"></td>
+            </tr>
+            <tr>
+                <td>Complemento:</td>
+                <td><input type="text" name="complemento" maxlength="50"></td>
+            </tr>
+            <tr>
+                <td>Cidade:</td>
+                <td><input type="text" name="cidade" required maxlength="30"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Adicionar">
+                    <input type="button" value="Cancelar" onclick="window.location.href='index.php'">
+                </td>
+            </tr>
+        </table>
     </form>
 </body>
 
