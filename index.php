@@ -73,11 +73,6 @@ $result = $conn->query("SELECT * FROM Cliente");
                 </td>
             </tr>
         <?php endwhile; ?>
-        <!-- <tr cellpadding="10">
-            <td colspan="13" align="center">
-                <input type="submit" value="Adicionar cliente" onclick="window.location.href='add.php'" />
-            </td>
-        </tr> -->
     </table>
     <input type="submit" value="Adicionar cliente" onclick="window.location.href='add.php'" />
 </body>
